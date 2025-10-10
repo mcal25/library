@@ -7,6 +7,9 @@ function Book(title, author, pages, publishedDate) {
     this.pages = pages;
     this.publishedDate = publishedDate;
     this.id = crypto.randomUUID();
+    this.toggleRead = function() {
+        this.read == true ? false : true;
+    }
 }
 
 function makeAndStoreBook(title, author, publishedDate, pages) {
