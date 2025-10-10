@@ -42,7 +42,10 @@ function generateLibrary() {
         const card = document.createElement('div');
         card.classList.add('book-card');
         bookList.append(card);
-        card.textContent = 'yeehaw';   
+        card.textContent = 'yeehaw';
+        const bookTitle = document.createElement('h1');
+        card.append(bookTitle);
+        bookTitle.textContent = daLibrary[i].title
     }
 }
 
