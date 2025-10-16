@@ -51,6 +51,18 @@ function generateLibrary() {
 
 generateLibrary();
 
+const newBookButton = document.getElementById('new-book-button');
+const dialog = document.getElementById('new-book-dialog');
+const closeDialogButton = document.getElementById('close-dialog-button');
+
+newBookButton.addEventListener('click', () => {
+    dialog.showModal();
+})
+
+closeDialogButton.addEventListener('click', () => {
+    dialog.close();
+})
+
 
 console.log(daLibrary);
 
