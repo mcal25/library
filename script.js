@@ -51,7 +51,6 @@ function generateLibrary() {
         card.textContent = 'yeehaw';
         const bookTitle = document.createElement('h1');
         card.append(bookTitle);
-        card.setAttribute('data-book-id', daLibrary[i].id)
         const removeBookButton = document.createElement('button');
         removeBookButton.textContent = 'Remove';
         removeBookButton.classList.add('remove-book-button');
