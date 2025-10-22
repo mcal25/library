@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,19 +10,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <h1 id="title-heading">Le Library</h1>
     <dialog id="new-book-dialog">
         <form action="" method="dialog">
-            <label for="author">Author:</label>
-            <input type="text" id="author" placeholder="Tolkien">
 
             <label for="title">Title:</label>
-            <input type="text" id="title" placeholder="Lord of the Rings">
+            <input name="title" type="text" id="title" placeholder="Lord of the Rings">
+
+            <label for="author">Author:</label>
+            <input name="author" type="text" id="author" placeholder="Tolkien">
 
             <label for="pages">Pages:</label>
-            <input type="number" id="pages" placeholder="1000">
-            
+            <input name="pages" type="number" id="pages" placeholder="1000">
+
+            <label for="publishedDate">Published Date:</label>
+            <input name="publishedDate" type="date" id="published-date">
+
+            <label for="finished-reading">Finished reading?</label>
+            <input name="finished-reading" type="checkbox" id="finished-reading">
+
+            <button type="submit" id="submit-book-button">Add this book</button>
+            <button type="button" id="close-dialog-button">Close Page</button>
         </form>
     </dialog>
     <div id="button-container">
@@ -30,4 +41,5 @@
     <div id="book-list"></div>
     <script src="./script.js"></script>
 </body>
+
 </html>
