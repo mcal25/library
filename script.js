@@ -6,10 +6,10 @@ function Book(title, author, pages, publishedDate, finishedReading) {
     this.author = author;
     this.pages = pages;
     this.publishedDate = publishedDate;
-    this.finishedReading = finishedReading;
+    this.finishedReading = false;
     this.id = crypto.randomUUID();
     this.toggleRead = function () {
-        this.read == true ? false : true;
+        this.finishedReading == true ? false : true;
     }
 }
 
@@ -48,9 +48,22 @@ function generateLibrary() {
         const card = document.createElement('div');
         card.classList.add('book-card');
         bookList.append(card);
-        card.textContent = 'yeehaw';
         const bookTitle = document.createElement('h1');
+        bookTitle.classList.add('book-title');
+        bookTitle.textContent = daLibrary[i].title
         card.append(bookTitle);
+        const readToggleButton = document.createElement('button');
+        readToggleButton.classList.add('read-toggle-button');
+        readToggleButton.textContent = 'In progress';
+        readToggleButton.addEventListener('click', () => {
+            readToggleButton.textContent = readToggleButton.textContent == 'In progress' ? 'Finished reading' : 'In progress';
+            for (let i = 0; i < daLibrary.length; i++) {
+                if (card.querySelector('h1').textContent == daLibrary[i].title) {
+                    daLibrary[i].finishedReading = daLibrary[i].finishedReading == true ? false : true;
+                }
+            }
+        });
+        card.append(readToggleButton);
         const removeBookButton = document.createElement('button');
         removeBookButton.textContent = 'Remove';
         removeBookButton.classList.add('remove-book-button');
@@ -60,7 +73,6 @@ function generateLibrary() {
             generateLibrary();
         });
         card.append(removeBookButton);
-        bookTitle.textContent = daLibrary[i].title
     }
 }
 
