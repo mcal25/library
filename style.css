@@ -2,6 +2,35 @@ html {
     background-color: rgb(79, 79, 86);
 }
 
+
+
+
+button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #063232;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #a4c7b8;
+    cursor: pointer;
+    display: block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    list-style: none;
+    outline: none;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
 #title-heading {
     text-align: center;
     font-family: "Marck Script", cursive;
@@ -12,13 +41,25 @@ html {
 
 .book-title {
     text-align: center;
+    font-family: "Tangerine", cursive;
+    font-size: 60px;
+    font-weight: 900;
+    margin: 20px;
+}
+
+.book-author {
+    text-align: center;
+    font-family: "Federo", sans-serif;
+    font-size: 20px;
+    font-weight: 120;
 }
 
 #book-list {
-    background-color: azure;
+    background-color: rgb(41, 56, 56);
     border: 0.5rem solid black;
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -27,40 +68,14 @@ html {
     height: 450px;
     margin: 20px;
     background-color: rgb(78, 93, 83);
+    border: 8px solid black;
+    border-radius: 4%;
 }
 
-.read-toggle-button {
-    width: 100px;
-    height: 50px;
-    background-color: #212121;
-    color: #6c7a70;
-    border: none;
-    border-radius: 6px;
-    font-family: sans-serif;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 15px;
-    display: block;
+[data-read='true'] {
+    background-color: pink;
 }
 
-.remove-book-button {
-    width: 100px;
-    height: 50px;
-    background-color: #212121;
-    color: #6c7a70;
-    border: none;
-    border-radius: 6px;
-    font-family: sans-serif;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
 
 .remove-book-button:hover {
     background-color: #2a2a2a;
@@ -72,37 +87,13 @@ html {
     justify-content: center;
 }
 
-#new-book-button {
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #EA4C89;
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    height: 40px;
-    line-height: 20px;
-    list-style: none;
-    margin: 0;
-    outline: none;
-    padding: 10px 16px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    transition: color 100ms;
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    margin: 1rem;
+
+
+dialog {
+    background-color: rgb(63, 90, 79);
 }
 
-.button-1:hover,
-.button-1:focus {
-    background-color: #F082AC;
+dialog input {
+    background-color: rgb(207, 207, 207);
 }
+

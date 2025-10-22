@@ -20,14 +20,12 @@ function makeAndStoreBook(title, author, pages, publishedDate, finishedReading) 
 // order my props are in is how I have to setup my form data ^^
 
 makeAndStoreBook('Lawd of da Ringz', 'J-Dog', 2500, 1969);
-makeAndStoreBook('Berry Potta', 'Angry Lady', 1500, 2000);
+makeAndStoreBook('Berry Potta', 'JK ROFLing', 1500, 2000);
 makeAndStoreBook('Bilight', 'Stiffy Meijer', 100, 2012);
-makeAndStoreBook('Stormsight Awwkhivez', 'Casper Sandersun', 100, 2012);
+makeAndStoreBook('Stormlight Awwkhivez', 'Casper Sandersun', 100, 2012);
 makeAndStoreBook('Fourth Bling', 'Jabekka Jarros', 100, 2012);
 makeAndStoreBook('Dungeon Crawler Gary the Snail', 'Matthew Deezamin', 100, 2012);
-makeAndStoreBook('Dungeon Crawler Gary the Snail', 'Matthew Deezamin', 100, 2012);
-makeAndStoreBook('Dungeon Crawler Gary the Snail', 'Matthew Deezamin', 100, 2012);
-makeAndStoreBook('Dungeon Crawler Gary the Snail', 'Matthew Deezamin', 100, 2012);
+
 
 
 
@@ -46,12 +44,17 @@ function generateLibrary() {
     };
     for (let i = 0; i < daLibrary.length; i++) {
         const card = document.createElement('div');
+        card.setAttribute('data-read', daLibrary[i].finishedReading)
         card.classList.add('book-card');
         bookList.append(card);
         const bookTitle = document.createElement('h1');
         bookTitle.classList.add('book-title');
         bookTitle.textContent = daLibrary[i].title
         card.append(bookTitle);
+        const bookAuthor = document.createElement('h3');
+        bookAuthor.classList.add('book-author');
+        bookAuthor.textContent = `By: ${daLibrary[i].author}`;
+        card.append(bookAuthor);
         const readToggleButton = document.createElement('button');
         readToggleButton.classList.add('read-toggle-button');
         readToggleButton.textContent = 'In progress';
@@ -60,8 +63,10 @@ function generateLibrary() {
             for (let i = 0; i < daLibrary.length; i++) {
                 if (card.querySelector('h1').textContent == daLibrary[i].title) {
                     daLibrary[i].finishedReading = daLibrary[i].finishedReading == true ? false : true;
+                    card.setAttribute('data-read', daLibrary[i].finishedReading)
                 }
             }
+            
         });
         card.append(readToggleButton);
         const removeBookButton = document.createElement('button');
